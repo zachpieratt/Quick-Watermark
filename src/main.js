@@ -1,13 +1,13 @@
 import { app, BrowserWindow, shell } from 'electron';
 import path from 'node:path';
 import started from "electron-squirrel-startup"
-// Handle creating/removing shortcuts on Windows when installing/uninstalling.
+
 if (started) {
   app.quit();
 }
 if (started) app.quit();
 const createWindow = () => {
-  // Create the browser window.
+
   const mainWindow = new BrowserWindow({
     autoHideMenuBar: true,
     width: 1920,
@@ -19,11 +19,11 @@ const createWindow = () => {
     },
   });
   mainWindow.webContents.setWindowOpenHandler((details) => {
-    shell.openExternal(details.url); // Open URL in user's browser.
-    return { action: "deny" }; // Prevent the app from opening the URL.
+    shell.openExternal(details.url);
+    return { action: "deny" };
   })
 
-  // and load the index.html of the app.
+
   if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
     mainWindow.loadURL(MAIN_WINDOW_VITE_DEV_SERVER_URL);
   } else {
@@ -32,9 +32,6 @@ const createWindow = () => {
 
 };
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   createWindow();
   mainWindow.maximize();
@@ -47,9 +44,6 @@ app.whenReady().then(() => {
   });
 });
 
-// Quit when all windows are closed, except on macOS. There, it's common
-// for applications and their menu bar to stay active until the user quits
-// explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
