@@ -6,7 +6,7 @@ Please check out the latest release in order to download the app! Thanks for loo
 <br>
 ![image](https://github.com/user-attachments/assets/345af135-37f1-4c22-980b-fcf66e423075)
 <br>
-This project currently only is supported on x64, but I do plan on adding releases for other populating OS's as soon as possible.
+This project currently only is supported on x64, but I do plan on adding releases for other popular OS's as soon as possible.
 
 Electon: <a href="https://github.com/electron/electron">Github</a><br>
 Watermarkjs: <a href="https://github.com/brianium/watermarkjs">Github</a><br>
